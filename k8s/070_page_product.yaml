@@ -1,0 +1,20 @@
+apiVersion: kdex.dev/v1alpha1
+kind: KDexPageBinding
+metadata:
+  name: page-product
+  namespace: kdex-site
+spec:
+  basePath: /product
+  contentEntries:
+    - rawHTML: |
+        <h1>Our Product: The Cloud Native Application Server (CNAS)</h1>
+        <p>Discover the power of KDex CNAS.</p>
+      slot: main
+  hostRef:
+    name: kdex-tech
+  label: Product
+  navigationHints:
+    weight: 100
+  pageArchetypeRef:
+    kind: KDexClusterPageArchetype
+    name: kdex-default-page-archetype

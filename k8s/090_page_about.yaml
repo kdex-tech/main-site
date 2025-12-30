@@ -1,0 +1,20 @@
+apiVersion: kdex.dev/v1alpha1
+kind: KDexPageBinding
+metadata:
+  name: page-about
+  namespace: kdex-site
+spec:
+  basePath: /about
+  contentEntries:
+    - rawHTML: |
+        <h1>About KDex Tech Inc.</h1>
+        <p>We are a company dedicated to revolutionizing the cloud native landscape.</p>
+      slot: main
+  hostRef:
+    name: kdex-tech
+  label: About
+  navigationHints:
+    weight: 300
+  pageArchetypeRef:
+    kind: KDexClusterPageArchetype
+    name: kdex-default-page-archetype

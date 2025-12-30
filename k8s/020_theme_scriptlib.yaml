@@ -1,0 +1,8 @@
+apiVersion: kdex.dev/v1alpha1
+kind: KDexScriptLibrary
+metadata:
+  name: kdex-main-site-scriptlib
+  namespace: kdex-site
+spec:
+  scripts:
+  - scriptSrc: https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4

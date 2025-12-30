@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #333;
+  color: #fff;
+}
+
+header {
+  background-color: #333;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+    height: 50px;
+}
+
+nav {
+  background-color: #333;
+  padding: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+main {
+  padding: 2rem;
+}
+
+header a.site-logo img {
+  content: url("/assets/images/KDex-Gear-KDex-Inc.svg");
+  height: 200px;
+  width: 200px;
+}
+header a.site-title {
+  display: none;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
