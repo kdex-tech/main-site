@@ -1,0 +1,9 @@
+{
+  "name": "@kdex-tech/docs-app",
+  "version": "0.0.40",
+  "type": "module",
+  "main": "index.js",
+  "dependencies": {
+    "@kdex-tech/ui": "^1.2.17"
+  }
+}

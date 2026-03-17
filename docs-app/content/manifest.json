@@ -1,0 +1,30 @@
+[
+  {
+    "path": "out/architecture/kdex-function-lifecycle.html",
+    "title": "Kdex Function Lifecycle"
+  },
+  {
+    "path": "out/src/cert-manager.html",
+    "title": "Cert Manager"
+  },
+  {
+    "path": "out/src/crd-reference.html",
+    "title": "Crd Reference"
+  },
+  {
+    "path": "out/src/jwt_authentication.html",
+    "title": "Jwt Authentication"
+  },
+  {
+    "path": "out/src/overview.html",
+    "title": "Overview"
+  },
+  {
+    "path": "out/src/page_authorization.html",
+    "title": "Page Authorization"
+  },
+  {
+    "path": "out/src/user-journeys.html",
+    "title": "User Journeys"
+  }
+]

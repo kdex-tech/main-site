@@ -1,50 +1,227 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Outfit', sans-serif;
   margin: 0;
-  background-color: #333;
-  color: #fff;
+  background-color: #0f172a;
+  color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 120px;
 }
 
 header {
-  background-color: #333;
-  padding: 1rem;
-  border-bottom: 1px solid #ddd;
+  background-color: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header > div {
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header img {
-    height: 50px;
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-nav {
-  background-color: #333;
-  padding: 1rem;
+header a.page-logo img {
+  content: url("/-/theme/images/KDex-Gear-KDex.svg");
+  height: 80px;
+  width: auto;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 1rem;
-}
-
-main {
-  padding: 2rem;
-}
-
-header a.site-logo img {
-  content: url("/assets/images/KDex-Gear-KDex-Inc.svg");
-  height: 200px;
-  width: 200px;
-}
-header a.site-title {
+header a.page-brand-name {
   display: none;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
+nav#navigation-main {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
 }
+
+nav#navigation-main ul.navigation.pages {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 2rem;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2.5rem;
+}
+
+nav#navigation-main li.navigation.page {
+  display: flex;
+  align-items: center;
+}
+
+nav#navigation-main a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.725rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+nav#navigation-main a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #227EE1;
+  transition: width 0.2s;
+}
+
+nav#navigation-main a:hover:after,
+nav#navigation-main .selected > a:after {
+  width: 100%;
+}
+
+nav#navigation-main a:hover {
+  color: #f1f5f9;
+}
+
+main {
+  padding: 0.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+footer {
+  background-color: transparent;
+  color: #94a3b8;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+/* Dropdown System */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 36px;
+  padding: 0 1rem;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #f1f5f9;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.dropdown-trigger:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown-content {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 180px;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1100;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Language Menu */
+.languages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.language-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #94a3b8;
+  transition: all 0.2s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.language-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f1f5f9;
+}
+
+.language.selected .language-link {
+  color: #f1f5f9;
+  background: rgba(34, 126, 225, 0.2);
+  font-weight: 600;
+}
+
+/* Flags */
+.flag-en:before { content: "🇺🇸"; }
+.flag-de:before { content: "🇩🇪"; }
+.flag-es:before { content: "🇪🇸"; }
+.flag-fr:before { content: "🇫🇷"; }
+.flag-it:before { content: "🇮🇹"; }
+.flag-pt:before { content: "🇵🇹"; }
+.flag-ru:before { content: "🇷🇺"; }
+.flag-zh:before { content: "🇨🇳"; }
+
+.current-flag-en:before { content: "🇺🇸"; margin-right: 0.5rem; }
+.current-flag-de:before { content: "🇩🇪"; margin-right: 0.5rem; }
+.current-flag-es:before { content: "🇪🇸"; margin-right: 0.5rem; }
+.current-flag-fr:before { content: "🇫🇷"; margin-right: 0.5rem; }
+.current-flag-it:before { content: "🇮🇹"; margin-right: 0.5rem; }
+.current-flag-pt:before { content: "🇵🇹"; margin-right: 0.5rem; }
+.current-flag-ru:before { content: "🇷🇺"; margin-right: 0.5rem; }
+.current-flag-zh:before { content: "🇨🇳"; margin-right: 0.5rem; }
